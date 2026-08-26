@@ -25,6 +25,20 @@ export default function Header() {
 
   const closeMenu = () => setOpen(false);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+    const id = href.replace("#", "");
+    const target = document.getElementById(id);
+    if (target) {
+      // wait a tick so the mobile menu's exit animation doesn't
+      // interrupt/clip the scroll before it starts
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    }
+  };
+
   return (
     <motion.header
       animate={{
@@ -116,7 +130,7 @@ export default function Header() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: i * 0.05 }}
                   >
-                    <a href={l.href} onClick={closeMenu}>
+                    <a href={l.href} onClick={(e) => handleNavClick(e, l.href)}>
                       {l.label}
                     </a>
                   </motion.li>
@@ -127,7 +141,7 @@ export default function Header() {
                   transition={{ duration: 0.3, delay: LINKS.length * 0.05 }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: "12px", marginTop: "12px" }}>
-                    <a href="#contact" className="quote" onClick={closeMenu}>
+                    <a href="#contact" className="quote" onClick={(e) => handleNavClick(e, "#contact")}>
                       Get Quote
                     </a>
                     <ThemeToggle />
