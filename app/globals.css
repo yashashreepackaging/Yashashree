@@ -430,7 +430,8 @@ footer{background:#161310;color:#a99f8f;padding:28px 0}
 
 /* Mobile nav (animated via framer-motion, JS-controlled instead of the old inline onclick) */
 @media(max-width:900px){
-  nav.nav-open{display:block;position:absolute;left:0;right:0;top:76px;background:var(--surface);border-bottom:1px solid var(--line);overflow:hidden}
+  nav.nav-open{display:block;position:absolute;left:0;right:0;top:76px;background:var(--surface);border-bottom:1px solid var(--line);overflow:hidden;z-index:100;pointer-events:auto}
+  nav.nav-open a{pointer-events:auto;display:block}
   nav.nav-open ul{flex-direction:column;gap:0;padding:8px 6%}
   nav.nav-open ul li{width:100%;padding:14px 0;border-bottom:1px solid var(--line)}
 }
