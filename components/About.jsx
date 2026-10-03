@@ -45,13 +45,13 @@ export default function About() {
           <Reveal className="about-card" x={-30} y={0}>
             <h3>Yashashree Packaging</h3>
             <p>
-              We are a newly established manufacturer of quality corrugated
-              boxes and customized packaging solutions.
+              We are a specialized manufacturer of quality corrugated boxes
+              and customized packaging solutions, committed to delivering
+              strong, reliable and cost-effective packaging solutions.
             </p>
             <p>
-              We are committed to providing strong, reliable and
-              cost-effective packaging solutions designed according to our
-              customers&apos; product and logistics requirements.
+              Every box is designed around our customers&apos; product and
+              logistics requirements.
             </p>
             <motion.ul
               className="checks"

@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { WA_QUOTE_URL } from "@/components/constants";
 
 export default function WhatsAppButton() {
   return (
     <motion.a
       className="wa"
-      href="https://wa.me/919921199007?text=Hello%20Yashashree%20Packaging%2C%20I%20would%20like%20to%20enquire%20about%20your%20packaging%20products."
+      aria-label="Get a Quote on WhatsApp"
+      href={WA_QUOTE_URL}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ opacity: 0, scale: 0, rotate: -30 }}

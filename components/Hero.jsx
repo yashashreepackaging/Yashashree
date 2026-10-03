@@ -2,8 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
-// TODO: Replace with external URL if needed, e.g., Google Drive/S3 link
-const COMPANY_PROFILE_URL = "/documents/yashashree-company-profile.pdf";
+import { COMPANY_PROFILE_URL } from "@/components/constants";
 
 const easeOut = [0.22, 1, 0.36, 1];
 
@@ -76,10 +75,9 @@ export default function Hero() {
             <span>Trusted protection.</span>
           </motion.h1>
           <motion.p variants={item}>
-            Yashashree Packaging is a newly established manufacturer of
-            quality corrugated boxes and customized packaging solutions,
-            focused on quality, consistency, timely delivery and customer
-            satisfaction.
+            YASHASHREE PACKAGING is a specialized manufacturer of quality
+            corrugated boxes and customized packaging solutions, focused on
+            consistent quality, reliable service and timely delivery.
           </motion.p>
           <motion.div className="btns" variants={item}>
             <motion.a

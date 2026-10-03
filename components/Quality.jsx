@@ -56,6 +56,15 @@ export default function Quality() {
             </StaggerGrid>
           </Reveal>
         </div>
+
+        <Reveal className="quality-commit" y={20}>
+          <h3>Quality Commitment</h3>
+          <p>
+            We follow systematic quality checks at every stage of production
+            to ensure consistent strength, accurate dimensions, reliable
+            performance and customer satisfaction.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

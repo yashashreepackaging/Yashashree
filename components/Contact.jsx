@@ -4,6 +4,14 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import { StaggerGrid, StaggerItem } from "@/components/Stagger";
+import {
+  COMPANY_PROFILE_URL,
+  WA_NUMBER,
+  WA_MESSAGE,
+  WA_QUOTE_URL,
+  MAP_DIRECTIONS_URL,
+  MAP_EMBED_URL,
+} from "@/components/constants";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -13,12 +21,10 @@ export default function Contact() {
 
   function sendWA(e) {
     e.preventDefault();
-    const t = `Hello Yashashree Packaging,%0A%0AName: ${encodeURIComponent(
-      name
-    )}%0ACompany: ${encodeURIComponent(company)}%0AMobile: ${encodeURIComponent(
-      phone
-    )}%0ARequirement: ${encodeURIComponent(message)}`;
-    window.open("https://wa.me/919921199007?text=" + t, "_blank");
+    const t = encodeURIComponent(
+      `${WA_MESSAGE}\n\nName: ${name}\nCompany: ${company}\nMobile: ${phone}\nRequirement: ${message}`
+    );
+    window.open(`https://wa.me/${WA_NUMBER}?text=${t}`, "_blank");
   }
 
   return (
@@ -63,6 +69,23 @@ export default function Contact() {
                 <br />
                 Maharashtra, India
               </strong>
+            </div>
+            <div className="contact-actions">
+              <a
+                className="btn gold"
+                href={MAP_DIRECTIONS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📍 Google Maps – Get Directions
+              </a>
+              <a
+                className="btn btn-download"
+                href={COMPANY_PROFILE_URL}
+                download="Yashashree_Company_Profile.pdf"
+              >
+                📄 Download Company Profile
+              </a>
             </div>
           </Reveal>
 
@@ -116,8 +139,26 @@ export default function Contact() {
                 Send Enquiry on WhatsApp
               </motion.button>
             </StaggerGrid>
+            <a
+              className="wa-quote-link"
+              href={WA_QUOTE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Or get a quote on WhatsApp instantly →
+            </a>
           </Reveal>
         </div>
+
+        <Reveal className="map-wrap" y={24}>
+          <iframe
+            title="Yashashree Packaging location on Google Maps"
+            src={MAP_EMBED_URL}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
+        </Reveal>
       </div>
     </section>
   );

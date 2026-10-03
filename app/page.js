@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import WhyChoose from "@/components/WhyChoose";
+import Industries from "@/components/Industries";
 import Products from "@/components/Products";
 import Facility from "@/components/Facility";
 import Flow from "@/components/Flow";
@@ -16,7 +18,9 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <WhyChoose />
       <Products />
+      <Industries />
       <Facility />
       <Flow />
       <Quality />
